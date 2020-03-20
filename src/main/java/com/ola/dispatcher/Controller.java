@@ -26,7 +26,7 @@ public class Controller {
 
            boolean authentication
                    =Authentication.isAuthentication(params.get(Constants.TOKEN.getValue()),
-                                      params.get(Constants.STUDENT_ID.getValue()));
+                                      params.get(Constants.USER_ID.getValue()));
 
            if(!authentication){
 

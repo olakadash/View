@@ -13,8 +13,9 @@ public class ShowMyScheduleCourse implements Service {
 
     public String serve(Map<String, String> params) {
 
-        ScheduleController scheduleController=new ScheduleController("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
-        List<Course> listCourses=scheduleController.showMyCourse(params.get(Constants.STUDENT_ID.getValue()));
+        ScheduleController scheduleController=new ScheduleController
+                ("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
+        List<Course> listCourses=scheduleController.showMyCourse(params.get(Constants.USER_ID.getValue()));
 
         for(Course course:listCourses){
 
@@ -31,7 +32,7 @@ public class ShowMyScheduleCourse implements Service {
         String token=command.split(" ")[2];
         Map<String,String> params=new HashMap<String, String>();
 
-        params.put(Constants.STUDENT_ID.getValue(),studentId);
+        params.put(Constants.USER_ID.getValue(),studentId);
         params.put(Constants.TOKEN.getValue(),token);
 
         return params;

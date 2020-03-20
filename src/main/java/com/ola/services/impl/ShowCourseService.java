@@ -13,7 +13,8 @@ public class ShowCourseService implements Service {
 
     public String serve(Map<String, String> params) {
 
-        CoursesController coursesController=new CoursesController("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
+        CoursesController coursesController=new CoursesController
+                ("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
 
         if (params.get(Constants.COURSE_Name.getValue())!=null){
 

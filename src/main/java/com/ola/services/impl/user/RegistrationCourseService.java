@@ -15,9 +15,9 @@ public class RegistrationCourseService implements Service {
         RegistrationCourseController registerController=new
                 RegistrationCourseController("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
 
-        registerController.register(params.get(Constants.STUDENT_ID.getValue()),params.get(Constants.COURSE_ID.getValue()));
+        registerController.register(params.get(Constants.USER_ID.getValue()),params.get(Constants.COURSE_ID.getValue()));
 
-        return String.format("your registered in : %s,%s ",params.get(Constants.STUDENT_ID.getValue())
+        return String.format("your registered in : %s,%s ",params.get(Constants.USER_ID.getValue())
                 ,params.get(Constants.COURSE_ID.getValue())+" Successfully");
     }
 
@@ -31,7 +31,7 @@ public class RegistrationCourseService implements Service {
 
         Map<String,String> serviceParam=new HashMap<String, String>();
 
-        serviceParam.put(Constants.STUDENT_ID.getValue(),studentId);
+        serviceParam.put(Constants.USER_ID.getValue(),studentId);
         serviceParam.put(Constants.COURSE_ID.getValue(),courseId);
         serviceParam.put(Constants.TOKEN.getValue(),token);
 

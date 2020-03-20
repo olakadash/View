@@ -14,7 +14,7 @@ public class DeleteMyScheduleCourse implements Service {
         ScheduleController scheduleController=new ScheduleController
                 ("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
 
-     return    scheduleController.deleteScheduleByUser(params.get(Constants.STUDENT_ID.getValue()),
+     return    scheduleController.deleteScheduleByUser(params.get(Constants.USER_ID.getValue()),
                 params.get(Constants.COURSE_ID.getValue()));
     }
 
@@ -27,7 +27,7 @@ public class DeleteMyScheduleCourse implements Service {
 
         Map<String , String> serviceParams=new HashMap<String, String>();
 
-        serviceParams.put(Constants.STUDENT_ID.getValue(),studentId);
+        serviceParams.put(Constants.USER_ID.getValue(),studentId);
         serviceParams.put(Constants.COURSE_ID.getValue(),courseId);
         serviceParams.put(Constants.TOKEN.getValue(),token);
 

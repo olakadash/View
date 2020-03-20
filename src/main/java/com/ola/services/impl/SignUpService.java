@@ -1,6 +1,6 @@
 package com.ola.services.impl;
 
-import com.ola.controller.SignUpController;
+import com.ola.controller.StudentController;
 import com.ola.services.Service;
 import com.ola.utils.Constants;
 
@@ -12,7 +12,8 @@ public class SignUpService implements Service {
 
     public String serve(Map<String, String> params) {
 
-        SignUpController signUpController=new SignUpController("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
+        StudentController signUpController=new StudentController
+                       ("jdbc:mysql://localhost:3306/student1?useSSL=false","root", "root@JEA");
 
         return signUpController.signUpClient(params)+"\n please login know";
 
